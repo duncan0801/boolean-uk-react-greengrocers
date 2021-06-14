@@ -1,15 +1,18 @@
-function CartItem() {
+
+
+function CartItem(props) {
     return (
-        <li>
+        <li key={props.cartItem.id.toString()}>
+
             <img
-                class="cart--item-icon"
-                src="assets/icons/001-beetroot.svg"
+                className="cart--item-icon"
+                src={`../../assets/icons/${props.cartItem.id}.svg`}
                 alt="beetroot"
             />
-            <p>beetroot</p>
-            <button class="quantity-btn remove-btn center">-</button>
-            <span class="quantity-text center">1</span>
-            <button class="quantity-btn add-btn center">+</button>
+            <p>{props.cartItem.id}</p>
+            <button className="quantity-btn remove-btn center">-</button>
+            <span className="quantity-text center">1</span>
+            <button className="quantity-btn add-btn center">+</button>
         </li>
 
     )

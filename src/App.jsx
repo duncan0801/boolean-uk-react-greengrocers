@@ -13,6 +13,9 @@ Your store item should have the following structure
   price: 0.35 <- You can come up with your own prices
 }
 
+1. RENDER ITEM TO STORE
+2. CREATE A STATE FOR THE CART WITH ITEM AND QUANTITY
+3.
 */
 const initialItems = [
   {
@@ -66,17 +69,32 @@ const initialItems = [
     price: 0.35 
   }
 ] 
-const [items, setShopItems] = useState(initialItems)
 
-const assetPath = "../assets/icons"
 
 
 export default function App() {
+  const [shopItems, setShopItems] = useState(initialItems)
+  const [cartItems, setCartItems] = useState([
+    {
+      id: "001-beetroot", 
+      quantity: 4
+    },
+    {
+      id: "002-carrot", 
+      quantity: 5
+    },
+    {
+      id: "003-apple", 
+      quantity: 6
+    }
+  ])
+
+  const assetPath = "../assets/icons"
   return (
   <div className="App">
     <div className="App">
-          <Header/>
-          <Main/>
+          <Header shopItems={shopItems}/>
+          <Main cartItems={cartItems}/>
           <Footer/>
         </div>
   </div>)

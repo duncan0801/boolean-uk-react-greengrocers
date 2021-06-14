@@ -1,8 +1,8 @@
-function StoreItem() {
+function StoreItem(props) {
     return (
-        <li>
-            <div class="store--item-icon">
-                <img src="assets/icons/001-beetroot.svg" alt="beetroot" />
+        <li key={props.shopItem.id.toString()}>
+            <div className="store--item-icon">
+                <img src={`../../assets/icons/${props.shopItem.id}.svg`} alt={props.shopItem.id} />
             </div>
             <button>Add to cart</button>
         </li>
