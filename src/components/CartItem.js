@@ -1,6 +1,10 @@
 
 
 function CartItem(props) {
+
+    let itemName = props.cartItem.id.slice(4)
+
+
     return (
         <li key={props.cartItem.id.toString()}>
 
@@ -9,9 +13,9 @@ function CartItem(props) {
                 src={`../../assets/icons/${props.cartItem.id}.svg`}
                 alt="beetroot"
             />
-            <p>{props.cartItem.id}</p>
+            <p>{itemName}</p>
             <button className="quantity-btn remove-btn center">-</button>
-            <span className="quantity-text center">1</span>
+            <span className="quantity-text center">{props.cartItem.quantity}</span>
             <button className="quantity-btn add-btn center">+</button>
         </li>
 

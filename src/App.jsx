@@ -15,7 +15,7 @@ Your store item should have the following structure
 
 1. RENDER ITEM TO STORE
 2. CREATE A STATE FOR THE CART WITH ITEM AND QUANTITY
-3.
+3. UPDATE THE CART STATE FOR THE QUANTITY OF AN ITEM AND TO ADD OR REMOVE AN ITEM
 */
 const initialItems = [
   {
@@ -39,7 +39,7 @@ const initialItems = [
     price: 0.35 
   },
   {
-    id: "005-avacado", 
+    id: "005-avocado", 
     name: "avacado",
     price: 0.35 
   },
