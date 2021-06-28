@@ -1,10 +1,11 @@
 function StoreItem(props) {
+    
     return (
         <li key={props.shopItem.id}>
             <div className="store--item-icon">
                 <img src={`../../assets/icons/${props.shopItem.id}.svg`} alt={props.shopItem.id} />
             </div>
-            <button>Add to cart</button>
+            <button onClick={() => props.addItemToCart(props.shopItem)}>Add to cart</button>
         </li>
     )
 }

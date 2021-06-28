@@ -1,6 +1,9 @@
 import CartItem from "./CartItem"
 
 function Main(props) {
+   
+
+    let total = props.getTotal()
     return (
         <main id="cart">
             <h2>Your Cart</h2>
@@ -9,7 +12,11 @@ function Main(props) {
                     {
                     props.cartItems.map((cartItem => 
                     {
-                    return <CartItem cartItem={cartItem} />
+                    return <CartItem 
+					increaseQuantity={props.increaseQuantity}
+					decreaseQuantity={props.decreaseQuantity} 
+                    key={cartItem.id} 
+                    cartItem={cartItem} />
                     }))}
                 </ul>
             </div>
@@ -18,7 +25,7 @@ function Main(props) {
                 <h3>Total</h3>
                 </div>
                 <div>
-                <span className="total-number">£0.00</span>
+                <span className="total-number">£{total}</span>
                 </div>
             </div>
         </main>

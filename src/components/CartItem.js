@@ -14,9 +14,9 @@ function CartItem(props) {
                 alt="beetroot"
             />
             <p>{itemName}</p>
-            <button className="quantity-btn remove-btn center">-</button>
+            <button onClick={() => props.decreaseQuantity(props.cartItem)}className="quantity-btn remove-btn center">-</button>
             <span className="quantity-text center">{props.cartItem.quantity}</span>
-            <button className="quantity-btn add-btn center">+</button>
+            <button onClick={() => props.increaseQuantity(props.cartItem)}className="quantity-btn add-btn center">+</button>
         </li>
 
     )
